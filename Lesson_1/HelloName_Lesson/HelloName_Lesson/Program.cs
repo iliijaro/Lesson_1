@@ -1,3 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿NewMethod();
+
+static void NewMethod()
+{
+    string name = Console.ReadLine();
+    Console.WriteLine("Hello " + name);
+
+}
 
