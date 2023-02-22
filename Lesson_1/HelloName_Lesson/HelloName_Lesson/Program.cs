@@ -3,7 +3,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Task4_1();
+        Task4_2();
     }
     public static void Lesson1()
     {
@@ -185,6 +185,24 @@ internal class Program
         else
         {
             Console.WriteLine("This number is divisible by 2");
+        }
+
+
+    }public static void Task4_2()
+    {
+        Console.WriteLine("Enter any number: ");
+        int num = int.Parse(Console.ReadLine());
+        int result;
+        int div = Math.DivRem(num, 2, out result);
+
+        if (result == 0)
+        {
+            Console.WriteLine("This number is divisible by 2");
+
+        }
+        else
+        {
+            Console.WriteLine("This number is not divisible by 2");
         }
 
 
