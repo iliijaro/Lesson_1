@@ -3,7 +3,12 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        string name = Console.ReadLine(); 
+        Lesson1();
+    }
+    public static void Lesson1()
+    {
+        string name = Console.ReadLine();
         Console.WriteLine("Hello " + name);
     }
+
 }
