@@ -3,7 +3,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Task2();
+        Task3();
     }
     public static void Lesson1()
     {
@@ -106,6 +106,69 @@ internal class Program
         }
 
 
+    }
+    public static void Task3()
+    {
+        Console.WriteLine("Enter the word from the topic 'Weather' to translate: ");
+        string word = Console.ReadLine();
+        string word1 = "погода";
+        string word2 = "градусы";
+        string word3 = "солнечно";
+        string word4 = "ветренно";
+        string word5 = "дождь";
+        string word6 = "снег";
+        string word7 = "торнадо";
+        string word8 = "туман";
+        string word9 = "гололёд";
+        string word10 = "жара";
+        string translate = "Translation: ";
+
+        if (word == word1)
+        {
+            Console.WriteLine(translate + "Weather");
+
+        }
+        else if (word == word2)
+        {
+            Console.WriteLine(translate + "Degrees");
+        }
+        else if (word == word3)
+        {
+            Console.WriteLine(translate + "Sunny");
+        }
+        else if (word == word4)
+        {
+            Console.WriteLine(translate + "Windy");
+        }
+        else if (word == word5)
+        {
+            Console.WriteLine(translate + "Rain");
+        }
+        else if (word == word6)
+        {
+            Console.WriteLine(translate + "Snow");
+        }
+        else if (word == word7)
+        {
+            Console.WriteLine(translate + "Tornado");
+        }
+        else if (word == word8)
+        {
+            Console.WriteLine(translate + "Fog");
+        }
+        else if (word == word9)
+        {
+            Console.WriteLine(translate + "Ice");
+        }
+        else if (word == word10)
+        {
+            Console.WriteLine(translate + "Heat");
+        }
+        else
+        {
+
+            Console.WriteLine("This word is not found in the Vocabluary!");
+        }
 
 
     }
