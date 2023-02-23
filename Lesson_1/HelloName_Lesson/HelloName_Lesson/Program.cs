@@ -13,7 +13,7 @@ internal class Program
     public static void Task1()
     {
         float operand1 = 20;
-        float operand2 = 10;
+        float operand2 = 0;
         Console.WriteLine("Enter the arithmetic sign: ");
         string sign = Console.ReadLine();
 
@@ -35,6 +35,17 @@ internal class Program
             case "/":
                 {
                     {
+                        if (operand2 != 0)
+                        {
+                            result1 = operand1 / operand2;
+                            string result = result1.ToString();
+                            Console.WriteLine("Result: " + result);
+                        }
+                        else
+                        {
+                            Console.WriteLine("You can not devide by 0");
+                        }
+
                         // Found the solution on the StackOverflow
                         // May I use it?
 
@@ -42,11 +53,10 @@ internal class Program
                             throw new DivideByZeroException();*/
 
                     }
-                    result1 = operand1 / operand2;
-                    string result = result1.ToString();
+                    
 
 
-                    Console.WriteLine("Result: " + result);
+                    
                     break;
                 }
 
