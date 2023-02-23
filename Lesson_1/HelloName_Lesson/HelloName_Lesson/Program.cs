@@ -3,7 +3,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Task4_2();
+        Task1();
     }
     public static void Lesson1()
     {
@@ -86,17 +86,14 @@ internal class Program
             Console.WriteLine("The number is in the Range [0-14]");
         }
         else if ((number >= 15) && (number <= 35))
-
         {
             Console.WriteLine("The number is in the Range [15-35]");
         }
         else if ((number >= 36) && (number <= 49))
-
         {
             Console.WriteLine("The number is in the Range [36-49]");
         }
         else if ((number >= 50) && (number <= 100))
-
         {
             Console.WriteLine("The number is in the Range [50-100]");
         }
@@ -126,7 +123,6 @@ internal class Program
         if (word == word1)
         {
             Console.WriteLine(translate + "Weather");
-
         }
         else if (word == word2)
         {
@@ -166,7 +162,6 @@ internal class Program
         }
         else
         {
-
             Console.WriteLine("This word is not found in the Vocabluary!");
         }
 
@@ -198,7 +193,6 @@ internal class Program
         if (result == 0)
         {
             Console.WriteLine("This number is divisible by 2");
-
         }
         else
         {
