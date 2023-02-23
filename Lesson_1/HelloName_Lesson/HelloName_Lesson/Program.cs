@@ -46,8 +46,9 @@ internal class Program
                             Console.WriteLine("You can not devide by 0");
                         }
 
-                        // Found the solution on the StackOverflow
-                        // May I use it?
+                        // Этот вариант немного не User Friendly, но он останавливает выполнение алгоритма,
+                        // при этом можно трекать эксепшен в данном участке, прочитал про использование конструкции Try Catch Finally,
+                        // так что оставлю этот вариант закоментированным, чтобы потом использовать его самому :)
 
                         /* if (operand2 == 0)
                             throw new DivideByZeroException();*/
