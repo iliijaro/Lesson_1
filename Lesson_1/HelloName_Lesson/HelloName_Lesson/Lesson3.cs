@@ -9,7 +9,7 @@ namespace HelloName_Lesson
     /// </summary>
     internal class Lesson3
 	{
-        public static void HomeTask3()
+        public static void HomeTask3_1()
         {
             int[] Array = { 1, 2, 3, 4, 4, 3, 2, 1 };
 
@@ -41,7 +41,7 @@ namespace HelloName_Lesson
         /// В результате должен быть новый массив без указанного числа.
         /// </summary>
 
-        public static void HomeTask3_1()
+        public static void HomeTask3_2()
         {
             int[] Array = { 1, 2, 1, 3, 4, 3, 1, 4, 5 };
             int count = 0;
@@ -94,7 +94,7 @@ namespace HelloName_Lesson
          /// Пусть размер массива вводится с консоли.
          /// </summary>
          /// 
-        public static void HomeTask3_2()
+        public static void HomeTask3_3()
         {
             Random random = new Random();
             Console.WriteLine("Enter the size of the Array: ");
@@ -144,7 +144,7 @@ namespace HelloName_Lesson
         /// (либо сообщите, что их средние арифметические равны).
         /// </summary>
 
-        public static void HomeTask3_3()
+        public static void HomeTask3_4()
         {
             int[] array1 = { 4, 3, 1, 8, 6 };
             int[] array2 = { 1, 8, 3, 4, 6 };
