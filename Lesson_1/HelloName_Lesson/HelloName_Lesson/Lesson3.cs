@@ -137,5 +137,52 @@ namespace HelloName_Lesson
             Console.WriteLine("\n" + "The minimum number: " + minimum);
             Console.WriteLine("\n" + "Summary: " + average);
         }
+
+        /// <summary>
+        /// Создайте 2 массива из 5 чисел.Выведите массивы на консоль в двух отдельных строках.
+        /// Посчитайте среднее арифметическое элементов каждого массива и сообщите, для какого из массивов это значение оказалось больше
+        /// (либо сообщите, что их средние арифметические равны).
+        /// </summary>
+
+        public static void HomeTask3_3()
+        {
+            int[] array1 = { 4, 3, 1, 8, 6 };
+            int[] array2 = { 1, 8, 3, 4, 6 };
+
+            float SumOfAllElements1 = 0;
+            Console.WriteLine("First array: ");
+            for (int i = 0; i < array1.Length; i++)
+            {
+                Console.Write(array1[i] + " ");
+                SumOfAllElements1 += array1[i];
+            }
+
+            float average1 = SumOfAllElements1 / array1.Length;
+            Console.WriteLine("\n" + "Average value of the first array: " + average1 + "\n");
+
+            float SumOfAllElements2 = 0;
+            Console.WriteLine("Second array: ");
+            for (int j = 0; j < array2.Length; j++)
+            {
+                Console.Write(array2[j] + " ");
+                SumOfAllElements2 += array2[j];
+            }
+
+            float average2 = SumOfAllElements2 / array2.Length;
+            Console.WriteLine("\n" + "Average value of the second array: " + average2);
+
+            if (SumOfAllElements1 > SumOfAllElements2)
+            {
+                Console.WriteLine("\n" + "The average value of the first array is greater than the second");
+            }
+            else if (SumOfAllElements1 == SumOfAllElements2)
+            {
+                Console.WriteLine("\n" + "The average value of the first and second arrays is equal");
+            }
+            else
+            {
+                Console.WriteLine("\n" + "The average value of the first array is less than the second");
+            }
+        }
     }
 }
