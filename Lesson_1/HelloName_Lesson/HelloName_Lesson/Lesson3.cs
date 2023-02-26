@@ -86,5 +86,56 @@ namespace HelloName_Lesson
                 Console.WriteLine();
             }
         }
+
+        /// <summary>
+         /// Создайте и заполните массив случайным числами и выведете максимальное, минимальное и среднее значение.
+         /// Для генерации случайного числа используйте метод Random() .
+         /// Пусть будет возможность создавать массив произвольного размера.
+         /// Пусть размер массива вводится с консоли.
+         /// </summary>
+         /// 
+        public static void HomeTask3_2()
+        {
+            Random random = new Random();
+            Console.WriteLine("Enter the size of the Array: ");
+            int ArraySize = Convert.ToInt32(Console.ReadLine());
+            int[] array = new int[ArraySize];
+            for (int i = 0; i < ArraySize; i++)
+            {
+                array[i] = (int)random.NextInt64(1, 10);
+            }
+
+            //Вывод всех элементов
+            Console.WriteLine("\n" + "All Elements of the Array:");
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine("Element[" + (i) + "]: " + array[i]);
+            }
+
+            int maximum = array[0];
+            int minimum = array[array.Length - 1];
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] > maximum)
+                {
+                    maximum = array[i];
+                }
+                else if (array[i] < minimum)
+                {
+                    minimum = array[i];
+                }
+            }
+
+            float SumOfAllElements = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                SumOfAllElements += array[i];
+            }
+            float average = SumOfAllElements / ArraySize;
+
+            Console.WriteLine("\n" + "The highest number: " + maximum);
+            Console.WriteLine("\n" + "The minimum number: " + minimum);
+            Console.WriteLine("\n" + "Summary: " + average);
+        }
     }
 }
