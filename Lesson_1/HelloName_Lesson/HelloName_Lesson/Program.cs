@@ -3,7 +3,7 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        HelloName_Lesson.Lesson4.HomeTask4_1(); 
+        HelloName_Lesson.Lesson4.HomeTask4_2(); 
     }
     static void Lesson1()
     {

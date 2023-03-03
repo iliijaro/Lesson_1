@@ -41,6 +41,26 @@ namespace HelloName_Lesson
 
             Console.WriteLine(string.Join(" ", ConnectedStrings));
         }
+
+        /// <summary>
+        /// Дана строка: teamwithsomeofexcersicesabcwanttomakeitbetter.
+        /// Необходимо найти в данной строке "abc", записав всё что до этих символов в первую переменную, а также всё, что после них во вторую.
+        /// Результат вывести в консоль.
+        /// </summary>
+
+        public static void HomeTask4_2()
+        {
+            string Precondition = "teamwithsomeofexcersicesabcwanttomakeitbetter";
+            Console.WriteLine("Original string: " + Precondition + "\n");
+            string subString = "abc";
+            int indexOfSubstring = Precondition.IndexOf(subString);
+
+            string FirstWord = Precondition.Substring(0, indexOfSubstring);
+            string SecondWord = Precondition.Substring(indexOfSubstring + 3);
+
+            Console.WriteLine("First word:" + FirstWord + "\n");
+            Console.WriteLine("Second word: " + SecondWord);
+        }
     }
 }
 
