@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection.Metadata;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace HelloName_Lesson
@@ -81,6 +83,79 @@ namespace HelloName_Lesson
 
             FinalText = FinalText.Remove(FinalText.Length - 1, 1) + "?";
             Console.WriteLine($"Final text: {FinalText}");
+        }
+
+        /// <summary>
+        /// Написать программу со следующим функционалом: На вход передать строку(будем считать, что это номер документа).
+        /// Номер документа имеет формат xxxx-yyy-xxxx-yyy-xyxy, где x — это число,а y — это буква.
+        /// </summary>
+
+        public static void HomeTask4_4()
+        {
+            string DocumentNumber = "7788-lul-0033-see-4a2a";
+
+            //Вывести на экран в одну строку два первых блока по 4 цифры.
+            string[] OnlyNumbers = DocumentNumber.Split("-");
+            string numbersOnly = OnlyNumbers[0] + " - " + OnlyNumbers[2];
+
+            Console.WriteLine($"First two blocks with numbers only: {numbersOnly}\n");
+
+            //Вывести на экран номер документа, но блоки из трех букв заменить на *** (каждая буква заменятся на *).
+            OnlyNumbers[1] = "-***-";
+            OnlyNumbers[3] = "-***-";
+
+            string AllDocumentWithoutLetters = OnlyNumbers[0] + OnlyNumbers[1] + OnlyNumbers[2] + OnlyNumbers[3] + OnlyNumbers[4];
+            
+            Console.WriteLine($"Whole document with the encrypted leters: {AllDocumentWithoutLetters}\n");
+
+            //Вывести на экран только одни буквы из номера документа в формате yyy/yyy/y/y в нижнем регистре.(реализовать с помощью класса StringBuilder).
+            StringBuilder WithoutNumbers = new StringBuilder(DocumentNumber);
+
+            WithoutNumbers.Remove(0, 5);
+            WithoutNumbers.Replace("-0033-", "/");
+            WithoutNumbers.Replace("-4", "/");
+            WithoutNumbers.Replace("2", "/");
+
+            string TextOnly = WithoutNumbers.ToString();
+            Console.WriteLine(TextOnly.ToLower() + "\n");
+
+            //Вывести на экран буквы из номера документа в формате "Letters:yyy/yyy/y/y" в верхнем регистре.
+            Console.WriteLine($"Letters:" + TextOnly.ToUpper() + "\n");
+
+            //Проверить содержит ли номер документа последовательность abc и вывети сообщение содержит или нет(причем, abc и ABC считается одинаковой последовательностью)
+            bool CheckLowerCase = Regex.IsMatch(DocumentNumber, "\\babc\\b");
+            bool CheckUpperCase = Regex.IsMatch(DocumentNumber, "\\bABC\\b");
+
+            if (CheckLowerCase == true || CheckUpperCase == true)
+            {
+                Console.WriteLine("[ABC/abc] exists in the text\n");
+            }
+            else
+            {
+                Console.WriteLine("[ABC/abc] does not exist in the text\n");
+            }
+
+            //Проверить начинается ли номер документа с последовательности 555.
+
+            if (DocumentNumber.StartsWith("555"))
+            {
+                Console.WriteLine("Document starts with 555\n");
+            }
+            else
+            {
+                Console.WriteLine("Document does not start with 555\n");
+            }
+
+            //Проверить заканчивается ли номер документа на последовательность 1a2b.
+
+            if (DocumentNumber.EndsWith("1a2b"))
+            {
+                Console.WriteLine("Document ends with 1a2b\n");
+            }
+            else
+            {
+                Console.WriteLine("Document does not end with 1a2b\n");
+            }
         }
     }
 }
