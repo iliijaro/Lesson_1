@@ -61,6 +61,27 @@ namespace HelloName_Lesson
             Console.WriteLine("First word:" + FirstWord + "\n");
             Console.WriteLine("Second word: " + SecondWord);
         }
+
+        ///  <summary>
+        ///  Дана строка: Плохой день.Необходимо с помощью метода substring удалить слово "плохой".
+        ///  После чего необходимо используя команду insert создать строку со значением: Хороший день!!!!!!!!!.
+        ///  Заменить последний "!" на "?"
+        ///  </summary>
+
+        public static void HomeTask4_3()
+        {
+            string InitialText = "PLOHOY DEN'";
+            Console.WriteLine($"Initial text: {InitialText}" + "\n");
+           
+            string CroppedText = InitialText.Substring(6);
+
+            string NewText = "HOROSHIY !!!!!!!!!";
+
+            string FinalText = NewText.Insert(8,CroppedText);
+
+            FinalText = FinalText.Remove(FinalText.Length - 1, 1) + "?";
+            Console.WriteLine($"Final text: {FinalText}");
+        }
     }
 }
 

@@ -3,7 +3,7 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        HelloName_Lesson.Lesson4.HomeTask4_2(); 
+        HelloName_Lesson.Lesson4.HomeTask4_3(); 
     }
     static void Lesson1()
     {
@@ -54,10 +54,7 @@ internal class Program
                             throw new DivideByZeroException();*/
 
                     }
-                    
-
-
-                    
+                      
                     break;
                 }
 
@@ -86,11 +83,11 @@ internal class Program
                 break;
         }
     }
+
     public static void Task2()
     {
         Console.WriteLine("Enter the number from 0 to 100: ");
         byte number = byte.Parse(Console.ReadLine());
-
 
         if ((number >= 0) && (number <= 14))
         {
@@ -112,9 +109,8 @@ internal class Program
         {
             Console.WriteLine("The number is not in the any Range");
         }
-
-
     }
+
     public static void Task3()
     {
         Console.WriteLine("Enter the word from the topic 'Weather' to translate: ");
@@ -175,9 +171,8 @@ internal class Program
         {
             Console.WriteLine("This word is not found in the Vocabluary!");
         }
-
-
     }
+
     public static void Task4_1()
     {
         Console.WriteLine("Enter any number: ");
@@ -192,9 +187,9 @@ internal class Program
         {
             Console.WriteLine("This number is divisible by 2");
         }
+    }
 
-
-    }public static void Task4_2()
+    public static void Task4_2()
     {
         Console.WriteLine("Enter any number: ");
         int num = int.Parse(Console.ReadLine());
@@ -209,10 +204,5 @@ internal class Program
         {
             Console.WriteLine("This number is not divisible by 2");
         }
-
-
     }
-    
-
-
 }
