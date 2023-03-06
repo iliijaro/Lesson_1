@@ -13,13 +13,13 @@ namespace HelloName_Lesson
         
         public static void HomeTask4()
 		{
-            string NewString = "test and 1test 231231 best test";
+            string newString = "test and 1test 231231 best test";
 
-            NewString = NewString.Replace("test", "testing");
+            newString = newString.Replace("test", "testing");
 
-            NewString = Regex.Replace(NewString, "[0-9]", "", RegexOptions.IgnoreCase);
+            newString = Regex.Replace(newString, "[0-9]", "", RegexOptions.IgnoreCase);
 
-            Console.WriteLine(NewString);
+            Console.WriteLine(newString);
         }
 
         /// <summary>
@@ -29,19 +29,19 @@ namespace HelloName_Lesson
 
         public static void HomeTask4_1()
         {
-            string Word1 = "\"Welcome\"";
-            string Word2 = "\"to\"";
-            string Word3 = "\"the\"";
-            string Word4 = "\"TMS\"";
-            string Word5 = "\"lesons\"";
+            string word1 = "\"Welcome\"";
+            string word2 = "\"to\"";
+            string word3 = "\"the\"";
+            string word4 = "\"TMS\"";
+            string word5 = "\"lesons\"";
 
-            string[] ConnectedArray = new string[] { Word1, Word2, Word3, Word4, Word5 };
+            string[] сonnectedArray = new string[] { word1, word2, word3, word4, word5 };
 
-            string ConnectedStrings = string.Join(" ", ConnectedArray);
+            string сonnectedStrings = string.Join(" ", сonnectedArray);
 
-            ConnectedStrings = ConnectedStrings.Replace("\"", "");
+            сonnectedStrings = сonnectedStrings.Replace("\"", "");
 
-            Console.WriteLine(string.Join(" ", ConnectedStrings));
+            Console.WriteLine(string.Join(" ", сonnectedStrings));
         }
 
         /// <summary>
@@ -52,16 +52,16 @@ namespace HelloName_Lesson
 
         public static void HomeTask4_2()
         {
-            string Precondition = "teamwithsomeofexcersicesabcwanttomakeitbetter";
-            Console.WriteLine("Original string: " + Precondition + "\n");
+            string precondition = "teamwithsomeofexcersicesabcwanttomakeitbetter";
+            Console.WriteLine("Original string: " + precondition + "\n");
             string subString = "abc";
-            int indexOfSubstring = Precondition.IndexOf(subString);
+            int indexOfSubstring = precondition.IndexOf(subString);
 
-            string FirstWord = Precondition.Substring(0, indexOfSubstring);
-            string SecondWord = Precondition.Substring(indexOfSubstring + 3);
+            string firstWord = precondition.Substring(0, indexOfSubstring);
+            string secondWord = precondition.Substring(indexOfSubstring + 3);
 
-            Console.WriteLine("First word:" + FirstWord + "\n");
-            Console.WriteLine("Second word: " + SecondWord);
+            Console.WriteLine("First word:" + firstWord + "\n");
+            Console.WriteLine("Second word: " + secondWord);
         }
 
         ///  <summary>
@@ -72,17 +72,17 @@ namespace HelloName_Lesson
 
         public static void HomeTask4_3()
         {
-            string InitialText = "PLOHOY DEN'";
-            Console.WriteLine($"Initial text: {InitialText}" + "\n");
+            string initialText = "PLOHOY DEN'";
+            Console.WriteLine($"Initial text: {initialText}" + "\n");
            
-            string CroppedText = InitialText.Substring(6);
+            string croppedText = initialText.Substring(6);
 
-            string NewText = "HOROSHIY !!!!!!!!!";
+            string newText = "HOROSHIY !!!!!!!!!";
 
-            string FinalText = NewText.Insert(8,CroppedText);
+            string finalText = newText.Insert(8,croppedText);
 
-            FinalText = FinalText.Remove(FinalText.Length - 1, 1) + "?";
-            Console.WriteLine($"Final text: {FinalText}");
+            finalText = finalText.Remove(finalText.Length - 1, 1) + "?";
+            Console.WriteLine($"Final text: {finalText}");
         }
 
         /// <summary>
@@ -92,41 +92,41 @@ namespace HelloName_Lesson
 
         public static void HomeTask4_4()
         {
-            string DocumentNumber = "7788-lul-0033-see-4a2a";
+            string documentNumber = "7788-lul-0033-see-4a2a";
 
             //Вывести на экран в одну строку два первых блока по 4 цифры.
-            string[] OnlyNumbers = DocumentNumber.Split("-");
-            string numbersOnly = OnlyNumbers[0] + " - " + OnlyNumbers[2];
+            string[] onlyNumbers = documentNumber.Split("-");
+            string numbersOnly = onlyNumbers[0] + " - " + onlyNumbers[2];
 
             Console.WriteLine($"First two blocks with numbers only: {numbersOnly}\n");
 
             //Вывести на экран номер документа, но блоки из трех букв заменить на *** (каждая буква заменятся на *).
-            OnlyNumbers[1] = "-***-";
-            OnlyNumbers[3] = "-***-";
+            onlyNumbers[1] = "-***-";
+            onlyNumbers[3] = "-***-";
 
-            string AllDocumentWithoutLetters = OnlyNumbers[0] + OnlyNumbers[1] + OnlyNumbers[2] + OnlyNumbers[3] + OnlyNumbers[4];
+            string allDocumentWithoutLetters = onlyNumbers[0] + onlyNumbers[1] + onlyNumbers[2] + onlyNumbers[3] + onlyNumbers[4];
             
-            Console.WriteLine($"Whole document with the encrypted leters: {AllDocumentWithoutLetters}\n");
+            Console.WriteLine($"Whole document with the encrypted leters: {allDocumentWithoutLetters}\n");
 
             //Вывести на экран только одни буквы из номера документа в формате yyy/yyy/y/y в нижнем регистре.(реализовать с помощью класса StringBuilder).
-            StringBuilder WithoutNumbers = new StringBuilder(DocumentNumber);
+            StringBuilder withoutNumbers = new StringBuilder(documentNumber);
 
-            WithoutNumbers.Remove(0, 5);
-            WithoutNumbers.Replace("-0033-", "/");
-            WithoutNumbers.Replace("-4", "/");
-            WithoutNumbers.Replace("2", "/");
+            withoutNumbers.Remove(0, 5);
+            withoutNumbers.Replace("-0033-", "/");
+            withoutNumbers.Replace("-4", "/");
+            withoutNumbers.Replace("2", "/");
 
-            string TextOnly = WithoutNumbers.ToString();
-            Console.WriteLine(TextOnly.ToLower() + "\n");
+            string textOnly = withoutNumbers.ToString();
+            Console.WriteLine(textOnly.ToLower() + "\n");
 
             //Вывести на экран буквы из номера документа в формате "Letters:yyy/yyy/y/y" в верхнем регистре.
-            Console.WriteLine($"Letters:" + TextOnly.ToUpper() + "\n");
+            Console.WriteLine($"Letters:" + textOnly.ToUpper() + "\n");
 
             //Проверить содержит ли номер документа последовательность abc и вывети сообщение содержит или нет(причем, abc и ABC считается одинаковой последовательностью)
-            bool CheckLowerCase = Regex.IsMatch(DocumentNumber, "\\babc\\b");
-            bool CheckUpperCase = Regex.IsMatch(DocumentNumber, "\\bABC\\b");
+            bool checkLowerCase = Regex.IsMatch(documentNumber, "\\babc\\b");
+            bool checkUpperCase = Regex.IsMatch(documentNumber, "\\bABC\\b");
 
-            if (CheckLowerCase == true || CheckUpperCase == true)
+            if ((checkLowerCase == true) || (checkUpperCase == true))
             {
                 Console.WriteLine("[ABC/abc] exists in the text\n");
             }
@@ -137,7 +137,7 @@ namespace HelloName_Lesson
 
             //Проверить начинается ли номер документа с последовательности 555.
 
-            if (DocumentNumber.StartsWith("555"))
+            if (documentNumber.StartsWith("555"))
             {
                 Console.WriteLine("Document starts with 555\n");
             }
@@ -148,7 +148,7 @@ namespace HelloName_Lesson
 
             //Проверить заканчивается ли номер документа на последовательность 1a2b.
 
-            if (DocumentNumber.EndsWith("1a2b"))
+            if (documentNumber.EndsWith("1a2b"))
             {
                 Console.WriteLine("Document ends with 1a2b\n");
             }
