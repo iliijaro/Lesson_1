@@ -2,10 +2,11 @@
 using HelloName_Lesson.Classes;
 
 namespace HelloName_Lesson
+
 {
-	public class Lesson5
+    public class Lesson5
 	{
-		public static void Main()
+		public static void Task1_Phone()
 		{
 			Phone iphone = new Phone();
 			iphone.model = "iPhone 11 Pro";
@@ -33,6 +34,23 @@ namespace HelloName_Lesson
 			people.receiveCall(people.contactName);
 
 			Abonent.sendMessage("+375444411111","+375291231231","+375337772318");
-		}	
+		}
+
+		public static void Task2_CreditCard()
+		{
+			CreditCard alfaBank = new(2233467984551111, 1000);
+
+			CreditCard mtbBank = new CreditCard(9876212161163333, 1000);
+
+			var priorbank = new CreditCard(3333212166668989, 1000);
+
+			alfaBank.AddMoney(99);
+            mtbBank.AddMoney(151);
+            priorbank.ReceiveMoney(50);
+
+            alfaBank.GetBalance();
+			mtbBank.GetBalance();
+            priorbank.GetBalance();
+        }
 	}
 }

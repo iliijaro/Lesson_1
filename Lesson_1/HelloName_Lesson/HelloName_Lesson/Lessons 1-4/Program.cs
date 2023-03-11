@@ -1,7 +1,12 @@
 ﻿
 internal class Program
 {
-    
+    static void Main(string[] args)
+    {
+        HelloName_Lesson.Lesson5.Task1_Phone();
+        HelloName_Lesson.Lesson5.Task2_CreditCard();
+    }
+
     static void Lesson1()
     {
         string name = Console.ReadLine();
