@@ -1,5 +1,6 @@
 ﻿using System;
 using HelloName_Lesson.GeometricalFigures;
+using HelloName_Lesson.Doctors;
 
 namespace HelloName_Lesson
 {
@@ -32,7 +33,21 @@ namespace HelloName_Lesson
                     Console.WriteLine(figure.GetSquare().ToString("#.##")+"\n");
                 }
             }
+        }
 
+        public static void Task2()
+        {
+            Patient petr = new Patient("Petr", 55, new TreatmentPlan(1).codeOfTreatment);
+            petr.GetInfo();
+            petr.assignTheDoctor();
+
+            Patient elvira = new Patient("Elvira", 42, new TreatmentPlan(2).codeOfTreatment);
+            elvira.GetInfo();
+            elvira.assignTheDoctor();
+
+            Patient pavel = new Patient("Pavel", 34, new TreatmentPlan(7).codeOfTreatment);
+            pavel.GetInfo();
+            pavel.assignTheDoctor();
         }
 	}
 }
