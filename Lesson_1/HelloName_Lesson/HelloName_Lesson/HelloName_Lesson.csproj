@@ -11,10 +11,12 @@
     <None Remove="Classes\" />
     <None Remove="Lessons 1-4\" />
     <None Remove="Doctors\" />
+    <None Remove="AutoParkClasses\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\" />
     <Folder Include="Lessons 1-4\" />
     <Folder Include="Doctors\" />
+    <Folder Include="AutoParkClasses\" />
   </ItemGroup>
 </Project>
