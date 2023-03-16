@@ -28,4 +28,3 @@ namespace HelloName_Lesson.GeometricalFigures
         }
     }
 }
-

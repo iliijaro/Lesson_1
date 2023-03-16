@@ -3,9 +3,7 @@ namespace HelloName_Lesson.GeometricalFigures
 {
     public class RectangleBuilder
     {
-        public RectangleBuilder()
-        {
-        }
+        public RectangleBuilder() { }
 
         public Rectangle CreateRectangle(double length, double width)
         {
@@ -20,4 +18,3 @@ namespace HelloName_Lesson.GeometricalFigures
         }
     }
 }
-

@@ -5,9 +5,7 @@ namespace HelloName_Lesson.GeometricalFigures
 	{
 		public double triangleHigh;
 
-		public IsoscelesTriangle(double firstSide, double secondSide, double thirdSide) : base(firstSide, secondSide, thirdSide)
-		{
-		}
+        public IsoscelesTriangle(double firstSide, double secondSide, double thirdSide) : base(firstSide, secondSide, thirdSide) { }
 
         public override double GetSquare()
         {
@@ -17,7 +15,7 @@ namespace HelloName_Lesson.GeometricalFigures
                 triangleHigh = Math.Sqrt(4 * Math.Pow(firstSide, 2) - Math.Pow(thirdSide, 2)) / 2;
 				return thirdSide * triangleHigh / 2;
             }
-			else if ((firstSide == thirdSide) && (firstSide != secondSide))
+            else if ((firstSide == thirdSide) && (firstSide != secondSide))
 			{
                 Console.WriteLine("Get square IsoscelesTriangle: ");
                 triangleHigh = Math.Sqrt(4 * Math.Pow(firstSide, 2) - Math.Pow(secondSide, 2)) / 2;
@@ -30,4 +28,3 @@ namespace HelloName_Lesson.GeometricalFigures
         }
     }
 }
-

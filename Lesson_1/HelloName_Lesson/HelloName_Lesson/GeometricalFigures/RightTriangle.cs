@@ -3,9 +3,7 @@ namespace HelloName_Lesson.GeometricalFigures
 {
     internal class RightTriangle : Triangle
     {
-        public RightTriangle(double firstSide, double secondSide, double thirdSide) : base(firstSide, secondSide, thirdSide)
-        {
-        }
+        public RightTriangle(double firstSide, double secondSide, double thirdSide) : base(firstSide, secondSide, thirdSide) { }
 
         public override double GetSquare()
         {
@@ -43,4 +41,3 @@ namespace HelloName_Lesson.GeometricalFigures
         }
     }
 }
-

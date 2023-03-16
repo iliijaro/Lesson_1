@@ -16,14 +16,11 @@ namespace HelloName_Lesson.Classes
             this.contactName = contactName;
         }
 
-        public Abonent() : this("Unknown")
-        {
-        }
+        public Abonent() : this("Unknown") { }
 
         public void receiveCall(string contactName)
         {
             this.contactName = contactName;
-
             Console.WriteLine($"{contactName} is calling\n");
         }
 
@@ -41,10 +38,9 @@ namespace HelloName_Lesson.Classes
                 for (int i = 0; i < messageNumbers.Length; i++)
                 {
                     string eachnumber = messageNumbers[i];
-                    Console.WriteLine("\nMessage will be sent to: " + (eachnumber));
+                    Console.WriteLine("Message will be sent to: " + (eachnumber)+"\n");
                 }
             }
         }
     }
 }
-
