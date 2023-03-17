@@ -1,5 +1,5 @@
 ﻿using System;
-namespace HelloName_Lesson.Classes
+namespace HelloName_Lesson.PhoneAndCreditCard
 {
     public class Phone
     {
