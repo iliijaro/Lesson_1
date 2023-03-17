@@ -18,20 +18,20 @@ namespace HelloName_Lesson.Classes
 
         public Abonent() : this("Unknown") { }
 
-        public void receiveCall(string contactName)
+        public void ReceiveCall(string contactName)
         {
             this.contactName = contactName;
             Console.WriteLine($"{contactName} is calling\n");
         }
 
-        public void receiveCall(string contactName, string number)
+        public void ReceiveCall(string contactName, string number)
         {
             this.contactName = contactName;
             this.number = number;
             Console.WriteLine($"{number} {contactName} is calling\n");
         }
 
-        public static void sendMessage(params string[] messageNumbers)
+        public static void SendMessage(params string[] messageNumbers)
         {
             if (messageNumbers != null)
             {

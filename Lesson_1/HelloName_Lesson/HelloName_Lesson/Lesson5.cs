@@ -28,11 +28,11 @@ namespace HelloName_Lesson
 
             iphone.GetNumber();
 
-            eugene.receiveCall(eugene.contactName, eugene.number);
-            valera.receiveCall(valera.contactName);
-            people.receiveCall(people.contactName);
+            eugene.ReceiveCall(eugene.contactName, eugene.number);
+            valera.ReceiveCall(valera.contactName);
+            people.ReceiveCall(people.contactName);
 
-            Abonent.sendMessage("+375444411111", "+375291231231", "+375337772318");
+            Abonent.SendMessage("+375444411111", "+375291231231", "+375337772318");
         }
 
         public static void Task2_CreditCard()
