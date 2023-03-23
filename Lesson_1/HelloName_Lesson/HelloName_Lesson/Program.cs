@@ -8,7 +8,7 @@ internal class Program
         //HelloName_Lesson.Lesson6.Task2();
         // HelloName_Lesson.Lesson7.TaskAutoPark();
         //HelloName_Lesson.Lesson8.Task();
-        HelloName_Lesson.Lesson9.Task2();
+        HelloName_Lesson.Lesson9.Task3();
          //HelloName_Lesson.Lesson1_2.Task1();
         
     }
