@@ -1,9 +1,10 @@
-﻿using System;
-namespace HelloName_Lesson.ProductClasses
+﻿namespace HelloName_Lesson.ProductClasses
 {
-	public class Dairy : Product
-	{
-		public Dairy(string productName, double productPrice, string produceDate, string expirationDate) : base(productName, productPrice, produceDate, expirationDate) { }
+    public class Dairy : Product
+    {
+        public Dairy(string productName, double productPrice, string produceDate, string expirationDate) : base(productName, productPrice, produceDate, expirationDate) { }
+
+        public Dairy(string productName) : base(productName) { }
 
         public override void GetInfoProduct()
         {

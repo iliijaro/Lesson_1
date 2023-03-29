@@ -1,11 +1,10 @@
-﻿using System;
-using HelloName_Lesson.ProductClasses;
-
-namespace HelloName_Lesson.ProductClasses
+﻿namespace HelloName_Lesson.ProductClasses
 {
     public class Beverages : Product
     {
         public Beverages(string productName, double productPrice, string produceDate, string expirationDate) : base(productName, productPrice, produceDate, expirationDate) { }
+
+        public Beverages(string productName) : base(productName) { }
 
         public override void GetInfoProduct()
         {

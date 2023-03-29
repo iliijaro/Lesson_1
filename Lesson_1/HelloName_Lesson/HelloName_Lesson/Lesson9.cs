@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.IO;
+﻿using System.Collections;
+using System.Numerics;
 using HelloName_Lesson.ProductClasses;
 
 namespace HelloName_Lesson
@@ -18,7 +17,6 @@ namespace HelloName_Lesson
             catch (ArgumentOutOfRangeException ex)
             {
                 Console.WriteLine(ex.Message, ex.Source, ex.Data);
-
             }
             catch (Exception ex)
             {
@@ -63,51 +61,52 @@ namespace HelloName_Lesson
                 new Beverages("Coke", 4.70, "February 12, 2023", "April 22 ,2023")
             };
 
-            //Console.WriteLine("List of Products: \n");
+            Console.WriteLine("List of Products: \n");
 
-            //foreach (var product in products)
-            //{
-            //    product.GetInfoProduct();
-            //}
+            foreach (var product in products)
+            {
+                product.GetInfoProduct();
+            }
 
-            //Console.WriteLine("Today is: " + DateTime.Today);
-            //Console.WriteLine("Expired Products: \n");
+            Console.WriteLine("Today is: " + DateTime.Today);
+            Console.WriteLine("Expired Products: \n");
 
-            //foreach (var product in products)
-            //{
-            //    if (!product.CheckTheExpirationDate())
-            //    {
-            //        product.GetInfoProduct();
-            //    }
-            //}
+            foreach (var product in products)
+            {
+                if (!product.CheckTheExpirationDate())
+                {
+                    product.GetInfoProduct();
+                }
+            }
 
-            //Task 1.1
-            //List<Product> products1_1 = new List<Product>()
-            //{
-            //    new Dairy("Milk", 4.50, "February 20, 2023", "March 21,2023"),
-            //    new Flour("Bread", 10, "February 05, 2023", "March 28,2023"),
-            //    new Beverages("Apple Juice", 7.20, "February 10, 2023", "March 10,2023"),
-            //    new Flour("Cake", 3.40, "February 7, 2023", "March 23,2023"),
-            //    new Dairy("Cheese", 12.10, "February 19, 2023", "March 21,2023"),
-            //    new Beverages("Coke", 4.70, "February 12, 2023", "April 22 ,2023")
-            //};
-            //foreach (var product in products1_1)
-            //{
-            //    product.GetInfoProduct();
-            //}
+            //// Task 1.1
+            List<Product> products1_1 = new List<Product>()
+            {
+                new Dairy("Milk", 4.50, "February 20, 2023", "March 21,2023"),
+                new Flour("Bread", 10, "February 05, 2023", "March 28,2023"),
+                new Beverages("Apple Juice", 7.20, "February 10, 2023", "March 10,2023"),
+                new Flour("Cake", 3.40, "February 7, 2023", "March 23,2023"),
+                new Dairy("Cheese", 12.10, "February 19, 2023", "March 21,2023"),
+                new Beverages("Coke", 4.70, "February 12, 2023", "April 22 ,2023")
+            };
 
-            //products1_1[1] = new Flour("Bread", 100, "February 05, 2023", "March 28,2023");
+            foreach (var product in products1_1)
+            {
+                product.GetInfoProduct();
+            }
 
-            //products1_1.RemoveAt(products1_1.Count - 1);
+            products1_1[1] = new Flour("Bread", 100, "February 05, 2023", "March 28,2023");
 
-            //Console.WriteLine("\nNew price and deleted object:");
+            products1_1.RemoveAt(products1_1.Count - 1);
 
-            //foreach (var product in products1_1)
-            //{
-            //    product.GetInfoProduct();
-            //}
+            Console.WriteLine("\nNew price and deleted object:");
 
-            //products1_1.Clear();
+            foreach (var product in products1_1)
+            {
+                product.GetInfoProduct();
+            }
+
+            products1_1.Clear();
 
             //Task 1.2
             List<Product> products1_2 = new List<Product>()
@@ -116,37 +115,111 @@ namespace HelloName_Lesson
                 new Flour("Bread", 150, "February 05, 2023", "March 28,2023"),
                 new Beverages("Apple Juice", 220, "February 10, 2023", "March 10,2023"),
                 new Flour("Cake", 340, "February 7, 2023", "March 23,2023"),
-                new Dairy("Cheese", 301, "February 19, 2023", "March 21,2023"),
+                new Dairy("Cheese", 309, "February 19, 2023", "March 21,2023"),
                 new Beverages("Coke", 290, "February 12, 2023", "April 22 ,2023")
             };
 
-            List<Product> container = new List<Product>() { };
+            var container = new List<Product>() { };
 
-            //написать метод на это решение
-            foreach (var product in products1_2)
+            //Не получилось сделать методы в качестве интерфейса, если можно потом помочь с этим? :)
+            static void CheckThePrice(List<Product> products, List<Product> products1)
             {
-                if (product.productPrice > 300)
+                foreach (var product in products)
                 {
-                    container.Add(product);
+                    if (product.productPrice > 300)
+                    {
+                        products1.Add(product);
+                    }
                 }
             }
 
-            //вывод мин значения
-            var minUnit = container[0].productPrice;
-
-            foreach (var product in container)
+            static void GetTheMinimumPrice(List<Product> products)
             {
-                if (minUnit >= product.productPrice)
+                var minUnit = products[0].productPrice;
+                var minProd = products[0];
+
+                foreach (var product in products)
                 {
-                    minUnit = product.productPrice;
-                    
+                    if (minUnit >= product.productPrice)
+                    {
+                        minUnit = product.productPrice;
+                        minProd = product;
+                    }
                 }
+                Console.WriteLine("The minimal price product from the list: ");
+                minProd.GetInfoProduct();
             }
-            Console.WriteLine(minUnit);
 
+            CheckThePrice(products1_2, container);
+            GetTheMinimumPrice(container);
 
+            //Task 1.3
+            var productsInStore = new Dictionary<Product, int>()
+            {
+                [new Dairy("Milk")] = 10,
+                [new Dairy("Cheese")] = 25,
+                [new Flour("Cake")] = 5,
+                [new Flour("Bread")] = 30,
+                [new Beverages("Apple Juice")] = 24,
+                [new Beverages("Coke")] = 22,
+            };
 
+            static void GetTheProductsInfo(Dictionary<Product, int> productsInStore)
+            {
+                foreach (KeyValuePair<Product, int> product in productsInStore)
+                {
+                    var productKey = Product.GetInfoProduct(product.Key);
+                    Console.WriteLine($"{productKey}, Count = {product.Value}");
+                }
+                Console.WriteLine();
+            }
 
+            static void GetTheProductsNames(Dictionary<Product, int> productsInStore)
+            {
+                foreach (KeyValuePair<Product, int> product in productsInStore)
+                {
+                    var productKey = Product.GetInfoProduct(product.Key);
+                    Console.WriteLine($"{productKey}");
+                }
+                Console.WriteLine();
+            }
+
+            static void GetTheProductsCount(Dictionary<Product, int> productsInStore)
+            {
+                foreach (KeyValuePair<Product, int> product in productsInStore)
+                {
+                    Console.WriteLine($"Count: {product.Value}");
+                }
+                Console.WriteLine();
+            }
+
+            GetTheProductsInfo(productsInStore);
+            GetTheProductsNames(productsInStore);
+            GetTheProductsCount(productsInStore);
+
+            //Dictionary To List
+            Console.WriteLine("From Dictionary to List: ");
+
+            var fromDictionary = new List<Product>(productsInStore.Keys);
+
+            foreach (var product in fromDictionary)
+            {
+                var productFromList = Product.GetInfoProduct(product);
+                Console.WriteLine($"{productFromList}");
+            }
+
+            Console.WriteLine();
+
+            //List To Dictionary
+            Console.WriteLine("From List to Dictionary:");
+
+            var fromList = fromDictionary.ToDictionary(Product => Product); //Нашёл способ через лямбду, но не знаю, как сделать по-другому
+
+            foreach (var product in fromList)
+            {
+                var productKey = Product.GetInfoProduct(product.Key);
+                Console.WriteLine($"{productKey}");
+            }
         }
     }
 }

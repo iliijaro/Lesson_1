@@ -1,5 +1,4 @@
-﻿using System;
-namespace HelloName_Lesson.ProductClasses
+﻿namespace HelloName_Lesson.ProductClasses
 {
     public abstract class Product
     {
@@ -17,9 +16,19 @@ namespace HelloName_Lesson.ProductClasses
             this.expirationDate = expirationDate;
         }
 
+        public Product(string productName)
+        {
+            this.productName = productName;
+        }
+
         public virtual void GetInfoProduct()
         {
             Console.WriteLine($"Product '{productName}' costs {productPrice}(BYN), produced on {produceDate} and expired on {expirationDate}\n");
+        }
+
+        public static string GetInfoProduct(Product product)
+        {
+            return product.productName;
         }
 
         public virtual bool CheckTheExpirationDate()
@@ -30,19 +39,6 @@ namespace HelloName_Lesson.ProductClasses
                 return true;
             }
             return false;
-        }
-
-        public bool CheckThePrice(List<Product> initial)
-        {
-            foreach (var product in initial)
-            {
-                if (productPrice > 300)
-                {
-                    return true;
-                }
-            }
-            return false;
-
         }
     }
 }
