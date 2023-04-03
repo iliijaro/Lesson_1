@@ -22,5 +22,36 @@
                 Console.WriteLine(newArray[i]);
             }
         }
+
+        public static void Task2()
+        {
+            var dieselEngine = new DieselEngine();
+            var gasEngine = new GasEngine();
+            var electroEngine = new ElectroEngine();
+
+            NewCar<Engine> car_diesel = new("Volkswagen Passat", dieselEngine, 10);
+            car_diesel.MoveCar(30);
+            car_diesel.MoveCar(22);
+            car_diesel.AddFuel(20);
+            car_diesel.AddFuel(31);
+
+            Console.WriteLine();
+
+            NewCar<Engine> car_gas = new("Porshe 911", gasEngine, 20);
+            car_gas.MoveCar(50);
+            car_gas.MoveCar(100);
+            car_gas.MoveCar(151);
+            car_gas.AddFuel(30);
+            car_gas.AddFuel(9);
+            car_gas.AddFuel(10);
+
+            Console.WriteLine();
+
+            NewCar<Engine> car_electro = new("Chevrolet Volt", electroEngine, 50);
+            car_electro.MoveCar(11);
+            car_electro.MoveCar(40);
+            car_electro.AddFuel(30);
+            car_electro.AddFuel(30);
+        }
     }
 }
