@@ -53,5 +53,14 @@
             car_electro.AddFuel(30);
             car_electro.AddFuel(30);
         }
+
+        public static void Task3()
+        {
+            Point<int> point1 = new Point<int>(-1, 14);
+            Point<int> point2 = new Point<int>(11, -6);
+            point1.GetInfo();
+
+            point1.GetTheDistance(point1, point2);
+        }
     }
 }
