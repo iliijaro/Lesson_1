@@ -13,6 +13,8 @@
     <None Remove="AutoParkClasses\" />
     <None Remove="Lessons 5-7\" />
     <None Remove="ExceptionClasses\" />
+    <None Remove="ProductClasses\" />
+    <None Remove="Lesson10\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lessons 1-4\" />
@@ -20,5 +22,7 @@
     <Folder Include="AutoParkClasses\" />
     <Folder Include="Lessons 5-7\" />
     <Folder Include="ExceptionClasses\" />
+    <Folder Include="ProductClasses\" />
+    <Folder Include="Lesson10\" />
   </ItemGroup>
 </Project>
