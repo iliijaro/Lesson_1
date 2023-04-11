@@ -5,7 +5,7 @@ namespace HelloName_Lesson
     {
         static void Lesson1()
         {
-            string name = Console.ReadLine();
+            string? name = Console.ReadLine();
             Console.WriteLine("Hello " + name);
         }
         public static void Task1()
@@ -13,7 +13,7 @@ namespace HelloName_Lesson
             float operand1 = 20;
             float operand2 = 0;
             Console.WriteLine("Enter the arithmetic sign: ");
-            string sign = Console.ReadLine();
+            string? sign = Console.ReadLine();
 
             float result1;
 
@@ -32,27 +32,12 @@ namespace HelloName_Lesson
 
                 case "/":
                     {
-                        {
-                            if (operand2 != 0)
-                            {
-                                result1 = operand1 / operand2;
-                                string result = result1.ToString();
-                                Console.WriteLine("Result: " + result);
-                            }
-                            else
-                            {
-                                Console.WriteLine("You can not devide by 0");
-                            }
 
-                            // Этот вариант немного не User Friendly, но он останавливает выполнение алгоритма,
-                            // при этом можно трекать эксепшен в данном участке, прочитал про использование конструкции Try Catch Finally,
-                            // так что оставлю этот вариант закоментированным, чтобы потом использовать его самому :)
-
-                            /* if (operand2 == 0)
-                                throw new DivideByZeroException();*/
-
-                        }
-
+                        if (operand2 == 0)
+                            throw new DivideByZeroException("You can not divide by zero!");
+                        else
+                            result1 = operand1 / operand2;
+                        Console.WriteLine("Result: " + result1);
                         break;
                     }
 
